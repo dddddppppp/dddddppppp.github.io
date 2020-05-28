@@ -1,27 +1,61 @@
-const vidArray = ["1", "2", "3", "4", "5", "6", "7"].sort( () => Math.random() - 0.5);
-for (let i = 0; i < vidArray.length; i++) {
-	console.log(vidArray[i])
+function showStory() {
+    document.getElementById("story").innerText = stories[Math.floor(Math.random() * stories.length)];
+    fadeIn(document.getElementById("storywrap"));
+    document.getElementById("container").style.filter = "blur(2px)"
 }
 
+function closeStory() {
+    fadeOut(document.getElementById("storywrap"));
+    document.getElementById("container").style.filter = "none"
+}
 
+const fadeIn = (el, smooth = true, displayStyle = 'block') => {
+    el.style.opacity = 0;
+    el.style.display = displayStyle;
+    if (smooth) {
+        let opacity = 0;
+        let request;
 
+        const animation = () => {
+            el.style.opacity = opacity += 0.2;
+            if (opacity >= 1) {
+                opacity = 1;
+                cancelAnimationFrame(request);
+            }
+        };
 
+        const rAf = () => {
+            request = requestAnimationFrame(rAf);
+            animation();
+        };
+        rAf();
 
+    } else {
+        el.style.opacity = 1;
+    }
+};
 
-// when videos are loaded
-let container = document.getElementById("container");
-container.onloadeddata = function() {
-    container.style.opacity = 1;
-    console.log("uhuhuu")
-}; 
+const fadeOut = (el, smooth = true, displayStyle = 'none') => {
+    if (smooth) {
+        let opacity = el.style.opacity;
+        let request;
 
+        const animation = () => {
+            el.style.opacity = opacity -= 0.2;
+            if (opacity <= 0) {
+                opacity = 0;
+                el.style.display = displayStyle;
+                cancelAnimationFrame(request);
+            }
+        };
 
+        const rAf = () => {
+            request = requestAnimationFrame(rAf);
+            animation();
+        };
+        rAf();
 
-
-
-
-
-
-
-// stuff to remember
-//  ffmpeg -i .\Documents\KABK_STUFF\house_pro\test_3_512.mp4 -map 0 -c copy -f segment -segment_time 3 -g 3 -sc_threshold 0 -force_key_frames "expr:gte(t,n_forced*3)" -c:v libvpx-vp9 -crf 50 -b:v 0 -b:a 128k -c:a libopus .\Documents\KABK_STUFF\house_pro\dreamy%03d.webm
+    } else {
+        el.style.opacity = 0;
+    }
+};
