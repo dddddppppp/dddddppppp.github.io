@@ -1,7 +1,7 @@
 function showStory() {
     document.getElementById("story").innerText = stories[Math.floor(Math.random() * stories.length)];
     fadeIn(document.getElementById("storywrap"));
-    document.getElementById("container").style.filter = "blur(2px)"
+    document.getElementById("bigvideo").style.filter = "blur(4px)"
 }
 
 function closeStory() {
