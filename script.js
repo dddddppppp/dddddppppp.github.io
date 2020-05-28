@@ -6,7 +6,7 @@ function showStory() {
 
 function closeStory() {
     fadeOut(document.getElementById("storywrap"));
-    document.getElementById("container").style.filter = "none"
+    document.getElementById("bidvideo").style.filter = "none"
 }
 
 const fadeIn = (el, smooth = true, displayStyle = 'block') => {
