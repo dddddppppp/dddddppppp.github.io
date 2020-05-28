@@ -1,15 +1,19 @@
 function showStory() {
     document.getElementById("storywrap").innerHTML = stories[Math.floor(Math.random() * stories.length)];
     fadeIn(document.getElementById("storywrap"));
-    document.getElementById("bigvideo").style.filter = "blur(10px)"
+    fadeIn(document.getElementById("close", 0.5));
+    document.getElementById("bigvideo").style.filter = "blur(30px)"
 }
 
 function closeStory() {
     fadeOut(document.getElementById("storywrap"));
+    fadeOut(document.getElementById("close"));
     document.getElementById("bigvideo").style.filter = "none"
 }
 
 const fadeIn = (el, smooth = true, displayStyle = 'block') => {
+	let f = 0;
+
     el.style.opacity = 0;
     el.style.display = displayStyle;
     if (smooth) {
@@ -17,11 +21,15 @@ const fadeIn = (el, smooth = true, displayStyle = 'block') => {
         let request;
 
         const animation = () => {
-            el.style.opacity = opacity += 0.2;
-            if (opacity >= 1) {
-                opacity = 1;
-                cancelAnimationFrame(request);
+        	if (f > 20) {
+            	el.style.opacity = opacity += 0.15;
+            	if (opacity >= 1) {
+               		opacity = 1;
+                	cancelAnimationFrame(request);
+            	}
             }
+            console.log(f)
+            f += 1;
         };
 
         const rAf = () => {
@@ -41,7 +49,7 @@ const fadeOut = (el, smooth = true, displayStyle = 'none') => {
         let request;
 
         const animation = () => {
-            el.style.opacity = opacity -= 0.2;
+            el.style.opacity = opacity -= 0.15;
             if (opacity <= 0) {
                 opacity = 0;
                 el.style.display = displayStyle;
