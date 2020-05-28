@@ -1,12 +1,12 @@
 function showStory() {
-    document.getElementById("story").innerText = stories[Math.floor(Math.random() * stories.length)];
+    document.getElementById("storywrap").innerHTML = stories[Math.floor(Math.random() * stories.length)];
     fadeIn(document.getElementById("storywrap"));
-    document.getElementById("bigvideo").style.filter = "blur(4px)"
+    document.getElementById("bigvideo").style.filter = "blur(10px)"
 }
 
 function closeStory() {
     fadeOut(document.getElementById("storywrap"));
-    document.getElementById("bidvideo").style.filter = "none"
+    document.getElementById("bigvideo").style.filter = "none"
 }
 
 const fadeIn = (el, smooth = true, displayStyle = 'block') => {
