@@ -1,14 +1,14 @@
 function showStory() {
+    document.getElementById("bigvideo").style.filter = "blur(40px)"
     document.getElementById("storywrap").innerHTML = stories[Math.floor(Math.random() * stories.length)];
     fadeIn(document.getElementById("storywrap"));
     fadeIn(document.getElementById("close", 0.5));
-    document.getElementById("bigvideo").style.filter = "blur(30px)"
 }
 
 function closeStory() {
     fadeOut(document.getElementById("storywrap"));
     fadeOut(document.getElementById("close"));
-    document.getElementById("bigvideo").style.filter = "none"
+    document.getElementById("bigvideo").style.filter = "blur(0px)"
 }
 
 const fadeIn = (el, smooth = true, displayStyle = 'block') => {

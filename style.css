@@ -52,8 +52,16 @@
 /*	border: 2px solid pink;
 */	z-index: -9999;
 
-	transition: .5s;
+	filter: blur(0px);
+	-moz-filter: blur(0px);
 
+
+	transition: 6.2s linear;
+
+}
+
+#bigvideo:hover {
+	cursor: pointer;
 }
 
 #bigvideo > video {
@@ -71,13 +79,17 @@
 
 
 	font-size: 25px;
-	color: rgba(0, 0, 0, .9);
+	color: rgba(0, 0, 0, 1);
 	opacity: 0;
 	display: none;
 
 	z-index: 10;
 
 	font-weight: bold;
+
+	overflow: hidden;
+
+	mix-blend-mode: overlay;
 
 /*	border: 3px violet solid;
 */
@@ -139,12 +151,16 @@ html {
   border: 3px solid var(--scrollbarBG);
 }
 */
-body::-webkit-scrollbar {
-  width: 0 !important
+*::-webkit-scrollbar {
+  width: 0;
 }
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
-body {
+* {
     scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
