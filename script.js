@@ -67,3 +67,13 @@ const fadeOut = (el, smooth = true, displayStyle = 'none') => {
         el.style.opacity = 0;
     }
 };
+
+
+const blurIn = (el) => {
+	let filter = el.style.filter;
+	let request;
+
+	const animation = () => {
+		el.style.filter = filter 
+	}
+}
