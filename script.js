@@ -1,3 +1,8 @@
+// hello sneakers
+// there's nothing to watch here
+// hehehehehe
+// POWER TO THE BBS
+
 function showStory() {
     document.getElementById("bigvideo").style.filter = "blur(40px)"
     document.getElementById("storywrap").innerHTML = stories[Math.floor(Math.random() * stories.length)];
