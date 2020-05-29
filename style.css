@@ -38,6 +38,7 @@
 	position: fixed;
 	bottom: 5%;
 	right: 5%;
+	transition: .8s;
 }
 
 #about {
@@ -54,6 +55,10 @@
 
 
 	overflow: hidden;
+}
+
+#about:hover {
+	cursor: pointer;
 }
 
 #diary {
