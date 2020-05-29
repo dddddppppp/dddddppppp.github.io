@@ -26,13 +26,35 @@
   font-family: "Sangbleu"
 }
 
-#title {
+#main_title {
 	position: fixed;
 	top: 2%;
 	left: 5%;
 
 /*	border: 1px solid blue;
 */}
+
+#about_button {
+	position: fixed;
+	bottom: 5%;
+	right: 5%;
+}
+
+#about {
+	width: 80%;
+
+	margin: 8% 10% 0 10%;
+	padding-bottom: 12%;
+
+	color: rgba(0, 0, 0, 1);
+	opacity: 0;
+	display: none;
+
+	z-index: 10;
+
+
+	overflow: hidden;
+}
 
 #diary {
 	width:100%;
@@ -72,9 +94,9 @@
 
 #storywrap {
 
-	width: 30%;
+	width: 80%;
 
-	margin: 8% 35% 0 35%;
+	margin: 8% 10% 0 10%;
 	padding-bottom: 12%;
 
 
@@ -89,13 +111,15 @@
 
 	overflow: hidden;
 
-	mix-blend-mode: overlay;
 
 /*	border: 3px violet solid;
 */
 
 }
-#story {
+.story {
+	margin: 0% 30% 0 30%;
+/*	border: 3px violet green;
+*/	mix-blend-mode: overlay;
 
 }
 
@@ -128,6 +152,15 @@
 
 #close:hover {
 	color: rgba(0, 0, 0, .8);
+}
+
+
+
+img {
+	mix-blend-mode: normal !important;
+	opacity: .8 !important;
+	width: 80%;
+	margin-left: 10%;
 }
 /*scrollbar*/
 /*

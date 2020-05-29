@@ -8,7 +8,30 @@ function showStory() {
 function closeStory() {
     fadeOut(document.getElementById("storywrap"));
     fadeOut(document.getElementById("close"));
+    if (About.status = true) {
+    	fadeOut(document.getElementById("about"));
+    	this.status = false;
+    }
     document.getElementById("bigvideo").style.filter = "blur(0px)"
+}
+
+let About = {
+	status: false,
+	toggleAbout: function () {
+			if (this.status == false) {
+				document.getElementById("about_button").style.color = "red";
+			    document.getElementById("bigvideo").style.filter = "blur(40px)"
+				fadeIn(document.getElementById("about"));
+				this.status = true;	
+				console.log("APRITI");
+			} else {
+				document.getElementById("about_button").style.color = "black";
+			    document.getElementById("bigvideo").style.filter = "blur(0px)"
+				fadeOut(document.getElementById("about"));
+				this.status = false;
+				console.log("HIUDITE");
+			}
+	}
 }
 
 const fadeIn = (el, smooth = true, displayStyle = 'block') => {
