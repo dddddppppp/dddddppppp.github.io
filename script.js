@@ -13,7 +13,7 @@ function showStory() {
 function closeStory() {
     fadeOut(document.getElementById("storywrap"));
     fadeOut(document.getElementById("close"));
-    if (About.status = true) {
+    if (About.status == true) {
     	fadeOut(document.getElementById("about"));
     	this.status = false;
     }
