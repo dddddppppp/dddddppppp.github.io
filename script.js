@@ -3,12 +3,27 @@
 // hehehehehe
 // POWER TO THE BBS
 
+function dots(num) {
+    let a = "<span class='dot'>&bull;</span>";
+    return "<span id='dots'>" + a.repeat(num) + "</span>"
+}
+
 function showStory() {
+    let num_stories = stories.length;
+    let rand_story = Math.floor(Math.random() * num_stories)
     document.getElementById("bigvideo").style.filter = "blur(40px)"
-    document.getElementById("storywrap").innerHTML = stories[Math.floor(Math.random() * stories.length)];
+
+    document.getElementById("storywrap").innerHTML = dots(num_stories) + stories[rand_story];
+    document.getElementsByClassName('dot')[rand_story].style.color = 'rgba(0,0,0,1';
+
     fadeIn(document.getElementById("storywrap"));
     fadeIn(document.getElementById("close", 0.5));
 }
+
+
+
+
+
 
 function closeStory() {
     fadeOut(document.getElementById("storywrap"));
@@ -24,13 +39,13 @@ let About = {
 	status: false,
 	toggleAbout: function () {
 			if (this.status == false) {
-				document.getElementById("about_button").style.color = "red";
+				document.getElementById("main_title").style.color = "red";
 			    document.getElementById("bigvideo").style.filter = "blur(40px)"
 				fadeIn(document.getElementById("about"));
 				this.status = true;	
 				console.log("APRITI");
 			} else {
-				document.getElementById("about_button").style.color = "black";
+				document.getElementById("main_title").style.color = "black";
 			    document.getElementById("bigvideo").style.filter = "blur(0px)"
 				fadeOut(document.getElementById("about"));
 				this.status = false;

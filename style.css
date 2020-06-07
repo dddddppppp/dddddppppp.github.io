@@ -33,15 +33,24 @@
 	top: 2%;
 	left: 5%;
 
+	transition: .8s;
+
+
 /*	border: 1px solid blue;
 */}
 
-#about_button {
+#main_title:hover {
+	cursor: pointer;
+	color: red;
+}
+
+
+/*#about_button {
 	position: fixed;
 	bottom: 5%;
 	right: 5%;
 	transition: .8s;
-}
+}*/
 
 #about {
 	width: 80%;
@@ -85,7 +94,7 @@
 	-moz-filter: blur(0px);
 
 
-	transition: 6.2s linear;
+	transition: 3.2s linear;
 
 }
 
@@ -103,7 +112,7 @@
 
 	width: 80%;
 
-	margin: 8% 10% 0 10%;
+	margin: 4% 10% 0 10%;
 	padding-bottom: 12%;
 
 
@@ -124,9 +133,30 @@
 
 }
 .story {
-	margin: 0% 30% 0 30%;
+	margin: 3% 30% 0 30%;
 /*	border: 3px violet green;
 */	mix-blend-mode: overlay;
+
+}
+
+#dots {
+	display: table;
+	table-layout: fixed;    /* For cells of equal size */
+	width: 10%;
+	margin: 0 45% 0 45%;
+}
+
+
+.dot {
+  height: 4px;
+  width: 4px;
+  font-size: 15px;
+  color: rgba(0, 0, 0, .3);
+
+  /*background-color: #bbb;
+  border-radius: 50%;*/
+  display: table-cell;
+  text-align: center;
 
 }
 
@@ -159,6 +189,7 @@
 
 #close:hover {
 	color: rgba(0, 0, 0, .8);
+	cursor: pointer;
 }
 
 
@@ -204,3 +235,4 @@ html {
   width: 0;
   background: transparent;
 }
+
